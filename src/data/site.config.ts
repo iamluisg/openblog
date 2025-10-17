@@ -11,9 +11,10 @@ interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
 	site: 'https://blog-template-gray.vercel.app/', // Write here your website url
-	author: 'Your Name', // Site author
-	title: 'Astro Theme OpenBlog', // Site title.
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', // Description to display in the meta tags
+	author: 'Luis Garcia', // Site author
+	title: 'Progressively Informed', // Site title.
+	description:
+		"A blog that focuses on documenting things that i've learned about software development.", // Description to display in the meta tags
 	lang: 'en-GB',
 	ogLocale: 'en_GB',
 	shareMessage: 'Share this post', // Message to share a post on social media
