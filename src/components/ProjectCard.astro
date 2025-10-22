@@ -9,12 +9,13 @@ interface Props {
 	tags: string[]
 	demoUrl?: string
 	githubUrl?: string
+	liveUrl?: string
 }
 
-const { title, description, heroImage, tags, demoUrl, githubUrl } = Astro.props
+const { title, description, heroImage, tags, demoUrl, githubUrl, liveUrl } = Astro.props
 ---
 
-<article class='grid grid-rows-[300px_auto] md:grid-rows-[300px_280px] min-h-full group'>
+<article class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group'>
 	<div class='relative overflow-hidden'>
 		<Image
 			src={heroImage}
@@ -57,20 +58,34 @@ const { title, description, heroImage, tags, demoUrl, githubUrl } = Astro.props
 			</p>
 		</div>
 
-		<footer class='flex gap-4 items-center'>
+		<footer class='flex flex-wrap gap-4 items-center'>
+			{
+				liveUrl && (
+					<a
+						href={liveUrl}
+						target='_blank'
+						rel='noopener noreferrer'
+						class='flex justify-center items-center dark:text-white rounded-full hover:translate-x-1 transition-transform duration-150 ease-in-out font-semibold gap-1 group'
+						aria-label={`View live app: ${title}`}
+					>
+						View Live
+						<span class='mt-[1px] group-hover:rotate-45 transition-transform duration-250 ease-in-out'>
+							<ArrowUp width='18' height='18' />
+						</span>
+					</a>
+				)
+			}
+
 			{
 				demoUrl && (
 					<a
 						href={demoUrl}
 						target='_blank'
 						rel='noopener noreferrer'
-						class='flex justify-center items-center dark:text-white rounded-full hover:translate-x-1 transition-transform duration-150 ease-in-out font-semibold gap-1 group'
+						class='text-gray-600 dark:text-gray-300 hover:text-stone-950 dark:hover:text-white transition-colors duration-150 font-medium'
 						aria-label={`View demo of ${title}`}
 					>
-						View Demo
-						<span class='mt-[1px] group-hover:rotate-45 transition-transform duration-250 ease-in-out'>
-							<ArrowUp width='18' height='18' />
-						</span>
+						Demo
 					</a>
 				)
 			}

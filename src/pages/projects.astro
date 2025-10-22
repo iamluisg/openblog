@@ -5,6 +5,7 @@ import ProjectCard from '@/components/ProjectCard'
 
 // Import placeholder images - replace these with your actual project images
 import placeholderImage from '../assets/images/placeholder-hero.jpg'
+import inflectImage from '../assets/images/inflectIcon.png'
 
 const meta = {
 	title: 'Projects',
@@ -16,11 +17,11 @@ const projects = [
 	{
 		title: 'Inflect',
 		description:
-			'An iOS app that helps users with English pronunciation through interactive exercises and real-time feedback.',
-		heroImage: placeholderImage,
-		tags: ['React', 'Node.js', 'PostgreSQL', 'WebSockets'],
-		demoUrl: 'https://example.com',
-		githubUrl: 'https://github.com/yourusername/project-one'
+			'iOS app that helps users with English pronunciation through interactive exercises using the front-facing camera.',
+		heroImage: inflectImage,
+		tags: [],
+		liveUrl:
+			'https://geo.itunes.apple.com/us/app/inflect-english-language-pronunciation/id1065293819?mt=8'
 	},
 	{
 		title: 'Project Two',
@@ -28,7 +29,8 @@ const projects = [
 			'A mobile-first progressive web app for tracking fitness goals and workout routines. Built with performance and offline-first functionality in mind.',
 		heroImage: placeholderImage,
 		tags: ['Vue.js', 'Firebase', 'PWA', 'Tailwind CSS'],
-		demoUrl: 'https://example.com',
+		liveUrl: 'https://example.com',
+		demoUrl: 'https://demo.example.com',
 		githubUrl: 'https://github.com/yourusername/project-two'
 	},
 	{
@@ -45,7 +47,8 @@ const projects = [
 			'A data visualization dashboard for analyzing business metrics. Features interactive charts, custom date ranges, and export functionality.',
 		heroImage: placeholderImage,
 		tags: ['React', 'D3.js', 'Express', 'MongoDB'],
-		demoUrl: 'https://example.com'
+		liveUrl: 'https://example.com',
+		demoUrl: 'https://demo.example.com'
 	},
 	{
 		title: 'Project Five',
@@ -53,7 +56,7 @@ const projects = [
 			'A real-time chat application with support for private messages, group channels, and file sharing. Built with scalability in mind.',
 		heroImage: placeholderImage,
 		tags: ['Next.js', 'Socket.io', 'Redis', 'PostgreSQL'],
-		demoUrl: 'https://example.com',
+		liveUrl: 'https://example.com',
 		githubUrl: 'https://github.com/yourusername/project-five'
 	},
 	{
@@ -62,7 +65,7 @@ const projects = [
 			'An e-commerce platform with payment processing, inventory management, and order tracking. Fully responsive and accessible.',
 		heroImage: placeholderImage,
 		tags: ['React', 'Stripe', 'Node.js', 'MySQL'],
-		demoUrl: 'https://example.com'
+		liveUrl: 'https://example.com'
 	}
 ]
 ---
@@ -71,7 +74,7 @@ const projects = [
 	<TitlePage title='Projects' />
 
 	<!-- Intro Section -->
-	<section class='prose dark:prose-invert max-w-none mt-8'>
+	<section class='prose dark:prose-invert max-w-none mt-1'>
 		<p class='text-lg'>
 			Here's a collection of applications and projects I've built over the years. Each project
 			represents a unique challenge and learning opportunity.
@@ -79,7 +82,7 @@ const projects = [
 	</section>
 
 	<!-- Projects Grid -->
-	<section class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8'>
+	<section class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-4'>
 		{
 			projects.map((project) => (
 				<ProjectCard
@@ -87,6 +90,7 @@ const projects = [
 					description={project.description}
 					heroImage={project.heroImage}
 					tags={project.tags}
+					liveUrl={project.liveUrl}
 					demoUrl={project.demoUrl}
 					githubUrl={project.githubUrl}
 				/>
