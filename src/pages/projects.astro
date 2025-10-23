@@ -6,6 +6,8 @@ import ProjectCard from '@/components/ProjectCard'
 // Import placeholder images - replace these with your actual project images
 import placeholderImage from '../assets/images/placeholder-hero.jpg'
 import inflectImage from '../assets/images/inflectIcon.png'
+import officeIdiomsImage from '../assets/images/officeIdiomsIcon.png'
+import everydayEnglishImage from '../assets/images/everydayEnglishIcon.png'
 
 const meta = {
 	title: 'Projects',
@@ -24,48 +26,20 @@ const projects = [
 			'https://geo.itunes.apple.com/us/app/inflect-english-language-pronunciation/id1065293819?mt=8'
 	},
 	{
-		title: 'Project Two',
+		title: 'Office Idioms',
 		description:
-			'A mobile-first progressive web app for tracking fitness goals and workout routines. Built with performance and offline-first functionality in mind.',
-		heroImage: placeholderImage,
-		tags: ['Vue.js', 'Firebase', 'PWA', 'Tailwind CSS'],
-		liveUrl: 'https://example.com',
-		demoUrl: 'https://demo.example.com',
-		githubUrl: 'https://github.com/yourusername/project-two'
+			'An iOS app designed to help Korean-speaking professionals with English idioms used in workplace settings.',
+		heroImage: officeIdiomsImage,
+		tags: [],
+		liveUrl: 'https://itunes.apple.com/us/app/office-idioms-sug-eo/id397746999?mt=8'
 	},
 	{
-		title: 'Project Three',
+		title: 'Everyday English',
 		description:
-			'An open-source CLI tool that automates common development workflows and improves developer productivity through smart defaults and configuration.',
-		heroImage: placeholderImage,
-		tags: ['TypeScript', 'Node.js', 'CLI'],
-		githubUrl: 'https://github.com/yourusername/project-three'
-	},
-	{
-		title: 'Project Four',
-		description:
-			'A data visualization dashboard for analyzing business metrics. Features interactive charts, custom date ranges, and export functionality.',
-		heroImage: placeholderImage,
-		tags: ['React', 'D3.js', 'Express', 'MongoDB'],
-		liveUrl: 'https://example.com',
-		demoUrl: 'https://demo.example.com'
-	},
-	{
-		title: 'Project Five',
-		description:
-			'A real-time chat application with support for private messages, group channels, and file sharing. Built with scalability in mind.',
-		heroImage: placeholderImage,
-		tags: ['Next.js', 'Socket.io', 'Redis', 'PostgreSQL'],
-		liveUrl: 'https://example.com',
-		githubUrl: 'https://github.com/yourusername/project-five'
-	},
-	{
-		title: 'Project Six',
-		description:
-			'An e-commerce platform with payment processing, inventory management, and order tracking. Fully responsive and accessible.',
-		heroImage: placeholderImage,
-		tags: ['React', 'Stripe', 'Node.js', 'MySQL'],
-		liveUrl: 'https://example.com'
+			'Everyday English is a reference app designed to help Korean speakers navigate real-world English with ease.',
+		heroImage: everydayEnglishImage,
+		tags: [],
+		liveUrl: 'https://itunes.apple.com/us/app/oi-everyday-english/id510558562?mt=8'
 	}
 ]
 ---
@@ -76,8 +50,7 @@ const projects = [
 	<!-- Intro Section -->
 	<section class='prose dark:prose-invert max-w-none mt-1'>
 		<p class='text-lg'>
-			Here's a collection of applications and projects I've built over the years. Each project
-			represents a unique challenge and learning opportunity.
+			Here's a collection of personal applications and projects I've built over the years.
 		</p>
 	</section>
 
