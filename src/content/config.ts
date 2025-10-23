@@ -24,6 +24,7 @@ const projects = defineCollection({
 		z.object({
 			title: z.string().max(80),
 			description: z.string(),
+			cardImage: image(),
 			heroImage: image(),
 			tags: z.array(z.string()),
 			liveUrl: z.string().url().optional(),

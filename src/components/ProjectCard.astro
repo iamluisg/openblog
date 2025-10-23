@@ -5,7 +5,7 @@ import ArrowUp from '@/components/icons/ArrowUp'
 interface Props {
 	title: string
 	description: string
-	heroImage: ImageMetadata
+	cardImage: ImageMetadata
 	tags: string[]
 	slug: string
 	demoUrl?: string
@@ -13,13 +13,13 @@ interface Props {
 	liveUrl?: string
 }
 
-const { title, description, heroImage, tags, slug, demoUrl, githubUrl, liveUrl } = Astro.props
+const { title, description, cardImage, tags, slug, demoUrl, githubUrl, liveUrl } = Astro.props
 ---
 
 <article class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group'>
 	<a class='relative overflow-hidden' href={`/project/${slug}/`}>
 		<Image
-			src={heroImage}
+			src={cardImage}
 			width={600}
 			height={300}
 			format='webp'
