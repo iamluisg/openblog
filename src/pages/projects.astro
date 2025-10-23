@@ -1,47 +1,19 @@
 ---
+import { getCollection } from 'astro:content'
 import BaseLayout from '@/layouts/BaseLayout'
 import TitlePage from '@/components/TitlePage'
 import ProjectCard from '@/components/ProjectCard'
-
-// Import placeholder images - replace these with your actual project images
-import placeholderImage from '../assets/images/placeholder-hero.jpg'
-import inflectImage from '../assets/images/inflectIcon.png'
-import officeIdiomsImage from '../assets/images/officeIdiomsIcon.png'
-import everydayEnglishImage from '../assets/images/everydayEnglishIcon.png'
 
 const meta = {
 	title: 'Projects',
 	description: 'A showcase of applications and projects I have built.'
 }
 
-// Sample projects data - replace with your actual projects
-const projects = [
-	{
-		title: 'Inflect',
-		description:
-			'iOS app that helps users with English pronunciation through interactive exercises using the front-facing camera.',
-		heroImage: inflectImage,
-		tags: [],
-		liveUrl:
-			'https://geo.itunes.apple.com/us/app/inflect-english-language-pronunciation/id1065293819?mt=8'
-	},
-	{
-		title: 'Office Idioms',
-		description:
-			'An iOS app designed to help Korean-speaking professionals with English idioms used in workplace settings.',
-		heroImage: officeIdiomsImage,
-		tags: [],
-		liveUrl: 'https://itunes.apple.com/us/app/office-idioms-sug-eo/id397746999?mt=8'
-	},
-	{
-		title: 'Everyday English',
-		description:
-			'Everyday English is a reference app designed to help Korean speakers navigate real-world English with ease.',
-		heroImage: everydayEnglishImage,
-		tags: [],
-		liveUrl: 'https://itunes.apple.com/us/app/oi-everyday-english/id510558562?mt=8'
-	}
-]
+// Get all projects from content collection, exclude drafts
+const allProjects = await getCollection('projects', ({ data }) => !data.draft)
+
+// Sort by publication date (newest first)
+const projects = allProjects.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 ---
 
 <BaseLayout title={meta.title} description={meta.description}>
@@ -59,13 +31,14 @@ const projects = [
 		{
 			projects.map((project) => (
 				<ProjectCard
-					title={project.title}
-					description={project.description}
-					heroImage={project.heroImage}
-					tags={project.tags}
-					liveUrl={project.liveUrl}
-					demoUrl={project.demoUrl}
-					githubUrl={project.githubUrl}
+					title={project.data.title}
+					description={project.data.description}
+					heroImage={project.data.heroImage}
+					tags={project.data.tags}
+					slug={project.slug}
+					liveUrl={project.data.liveUrl}
+					demoUrl={project.data.demoUrl}
+					githubUrl={project.data.githubUrl}
 				/>
 			))
 		}
